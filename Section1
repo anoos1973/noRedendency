@@ -1,0 +1,32 @@
+public class Section1 {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        System.out.print("Please enter 10 numbers :\n");
+        Scanner input = new Scanner(System.in);
+        int arr[] = new int[10];
+        int y;
+        int z = 10;
+        for (int i = 0; i < z; i++) {
+            y = input.nextInt();
+            int count = 0;
+            for (int j = 0; j < i; j++) {
+                if (y == arr[j]) {
+                    count++;
+                }
+            }
+            if (count == 0) {
+                arr[i] = y;
+            } else {
+                z--;
+                i--;
+            }
+        }
+        for (int i = 0; i < z; i++) {
+            System.out.print(arr[i] + "   ");
+        }
+    }
+
+}
